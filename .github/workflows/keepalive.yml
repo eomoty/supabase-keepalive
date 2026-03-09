@@ -1,0 +1,15 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"  # Runs every 12 hours
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Supabase
+        run: |
+          curl -X GET "https://tuhnauejmcufnfwmvwba.supabase.co" \
+          -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR1aG5hdWVqbWN1Zm5md212d2JhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk1NDc4MzIsImV4cCI6MjA4NTEyMzgzMn0.JtFZimUrU_wOXWkkUnGxNb0weyTnec-Z_gYy2wCwaOM"
