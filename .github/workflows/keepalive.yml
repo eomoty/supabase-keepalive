@@ -2,12 +2,12 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # Runs every 12 hours
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
-
     steps:
       - name: Ping Supabase
         run: curl https://tuhnauejmcufnfwmvwba.supabase.co
